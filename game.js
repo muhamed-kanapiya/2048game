@@ -256,6 +256,27 @@ window.onload = function () {
         var y = event.clientY;
         controller.end(x, y);
     }
+    document.ontouchstart = function (e) {
+        var event = e || window.event;
+        var obj = event.target || event.srcElement;
+        var x = event.clientX;
+        var y = event.clientY;
+        controller.start(x, y);
+    }
+    document.ontouchmove = function (e) {
+        var event = e || window.event;
+        var obj = event.target || event.srcElement;
+        var x = event.clientX;
+        var y = event.clientY;
+        controller.move(x, y);
+    }
+    document.ontouchend = function (e) {
+        var event = e || window.event;
+        var obj = event.target || event.srcElement;
+        var x = event.clientX;
+        var y = event.clientY;
+        controller.end(x, y);
+    }
     function keyUp(e) {
         var currKey=0,e=e||event;
         currKey=e.keyCode||e.which||e.charCode;
